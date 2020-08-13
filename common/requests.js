@@ -1,8 +1,7 @@
-const baseUrl = 'http://localhost/mysites/cockpit'
-const apiUrl = 'api/collections'
-const apiToken = 'fb50a5340cfc5239529abd69bce296'
-const collectionName = 'medicalSite'
-
+const baseUrl = process.env.BASE_URL
+const apiUrl = process.env.API_URL
+const apiToken = process.env.API_TOKEN
+const collectionName = process.env.COLLECTION_NAME
 function getObjects() {
   return new Promise((resolve, reject) => {
     const endpoint =

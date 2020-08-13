@@ -14,7 +14,10 @@ export const state = () => ({
     contact_info: {
       phone: null,
       email: null,
-      address: null,
+      address: {
+        street: null,
+        city: null,
+      },
     },
     social: {
       facebook: null,

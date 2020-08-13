@@ -11,7 +11,12 @@
         </strong>
         <br />
         <v-btn :href="`tel:${globals.contact_info.phone}`" text>
-          {{ globals.contact_info.phone }}
+          <h5
+            style="font-family: Arial, Helvetica, sans-serif;"
+            class="white--text"
+          >
+            {{ globals.contact_info.phone }}
+          </h5>
         </v-btn>
       </v-col>
       <br />
@@ -21,7 +26,12 @@
         </strong>
         <br />
         <v-btn :href="`mailto:${globals.contact_info.email}`" text>
-          {{ globals.contact_info.email }}
+          <h5
+            style="font-family: Arial, Helvetica, sans-serif;"
+            class="white--text"
+          >
+            {{ globals.contact_info.email }}
+          </h5>
         </v-btn>
       </v-col>
       <br />
@@ -31,46 +41,61 @@
         </strong>
         <br />
         <v-btn
-          :href="`http://maps.google.com/?q=${globals.contact_info.address}`"
+          :href="`http://maps.google.com/?q=${globals.contact_info.address.street} ${globals.contact_info.address.city}`"
           target="blank"
           text
         >
-          {{ globals.contact_info.address }}
+          <v-col>
+            <h5
+              style="font-family: Arial, Helvetica, sans-serif;"
+              class="white--text"
+            >
+              {{ globals.contact_info.address.street }}
+            </h5>
+            <h5
+              style="font-family: Arial, Helvetica, sans-serif;"
+              class="white--text"
+            >
+              {{ globals.contact_info.address.city }}
+            </h5>
+          </v-col>
         </v-btn>
       </v-col>
-      <v-col sm="4">
-        <div style="font-style: 1.625em; margin-bottom: 1.625em;">
-          Connect
-        </div>
-        <div style="margin-bottom: 1.625em;">
-          <v-btn
-            style="margin-right: 0.625em;"
-            :href="globals.social.facebook"
-            target="_blank"
-            text
-          >
-            <v-icon class="fa fa-facebook" />
-          </v-btn>
-          <v-btn
-            style="margin-right: 0.625em;"
-            :href="globals.social.twitter"
-            target="_blank"
-            text
-          >
-            <v-icon class="fa fa-twitter font-26" />
-          </v-btn>
-          <v-btn
-            style="margin-right: 0.625em;"
-            :href="globals.social.google_plus"
-            target="_blank"
-            text
-          >
-            <v-icon class="fa fa-google-plus" />
-          </v-btn>
-        </div>
-        <div style="margin-bottom: 1.625em;">
-          &copy; {{ globals.footer.year }} {{ globals.footer.company_title }}
-        </div>
+      <v-col>
+        <v-col sm="4">
+          <div style="font-style: 1.625em; margin-bottom: 1.625em;">
+            Connect
+          </div>
+          <div style="margin-bottom: 1.625em;">
+            <v-btn
+              style="margin-right: 0.625em;"
+              :href="globals.social.facebook"
+              target="_blank"
+              text
+            >
+              <v-icon class="fa fa-facebook" />
+            </v-btn>
+            <v-btn
+              style="margin-right: 0.625em;"
+              :href="globals.social.twitter"
+              target="_blank"
+              text
+            >
+              <v-icon class="fa fa-twitter font-26" />
+            </v-btn>
+            <v-btn
+              style="margin-right: 0.625em;"
+              :href="globals.social.google_plus"
+              target="_blank"
+              text
+            >
+              <v-icon class="fa fa-google-plus" />
+            </v-btn>
+          </div>
+          <div style="margin-bottom: 1.625em;">
+            &copy; {{ globals.footer.year }} {{ globals.footer.company_title }}
+          </div>
+        </v-col>
       </v-col>
     </v-row>
   </v-footer>
