@@ -10,7 +10,7 @@
             class="img-circle"
             max-width="30px"
             height="30px"
-            :src="`http://localhost/mysites/${blog.author.image.path}`"
+            :src="`${process.env.BASE_URL}${blog.author.image.path}`"
             crossorigin="anonymous"
           />
           <p style="margin: 0 1em;">
@@ -27,7 +27,7 @@
               class="center-block"
               max-heigh="900px"
               max-width="900px"
-              :src="`http://localhost/mysites/${blog.hero.path}`"
+              :src="`${process.env.BASE_URL}${blog.hero.path}`"
               crossorigin="anonymous"
             />
           </div>

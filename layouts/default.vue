@@ -10,7 +10,7 @@
             <v-img
               width="200px"
               height="60px"
-              :src="`http://localhost/mysites/${globals.header.logo.path}`"
+              :src="`${process.env.BASE_URL}${globals.header.logo.path}`"
             />
           </v-btn>
           <app-nav-bar @toggle-nav-drawer="toggleDrawer = !toggleDrawer" />

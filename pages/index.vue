@@ -7,7 +7,7 @@
             <v-carousel-item
               v-for="(slide, i) in home.carousel"
               :key="i"
-              :src="`http://localhost/mysites/${slide.path}`"
+              :src="`${process.env.BASE_URL}${slide.path}`"
               transition="fade-transition"
               reverse-transition="fade-transition"
             />
@@ -47,7 +47,7 @@
           <div style="margin-bottom: 1.25em;">
             <v-img
               class="img-circle center-block"
-              :src="`http://localhost/mysites/${item.value.image.path}`"
+              :src="`h${process.env.BASE_URL}${item.value.image.path}`"
               height="300px"
               width="300px"
             />

@@ -17,7 +17,7 @@
               class="img-circle"
               max-width="30px"
               height="30px"
-              :src="`http://localhost/mysites/${item.value.author.image.path}`"
+              :src="`${process.env.BASE_URL}${item.value.author.image.path}`"
             />
             <p style="margin: 0 1em;">
               {{ item.value.author.title }}
