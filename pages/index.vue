@@ -7,7 +7,7 @@
             <v-carousel-item
               v-for="(slide, i) in home.carousel"
               :key="i"
-              :src="`${process.env.BASE_URL}${slide.path}`"
+              :src="`${baseUrl}${slide.path}`"
               transition="fade-transition"
               reverse-transition="fade-transition"
             />
@@ -47,7 +47,7 @@
           <div style="margin-bottom: 1.25em;">
             <v-img
               class="img-circle center-block"
-              :src="`h${process.env.BASE_URL}${item.value.image.path}`"
+              :src="`${baseUrl}${item.value.image.path}`"
               height="300px"
               width="300px"
             />
@@ -89,6 +89,9 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(['home']),
+    baseUrl() {
+      return process.env.BASE_URL
+    },
   },
 }
 </script>

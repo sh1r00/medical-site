@@ -17,7 +17,7 @@
               class="img-circle"
               max-width="30px"
               height="30px"
-              :src="`${process.env.BASE_URL}${item.value.author.image.path}`"
+              :src="`${baseUrl}${item.value.author.image.path}`"
             />
             <p style="margin: 0 1em;">
               {{ item.value.author.title }}
@@ -48,6 +48,9 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(['blogs']),
+    baseUrl() {
+      return process.env.BASE_URL
+    },
   },
   mounted() {
     this.$store.dispatch('getBlogs', 'blog')

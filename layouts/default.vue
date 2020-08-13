@@ -10,7 +10,7 @@
             <v-img
               width="200px"
               height="60px"
-              :src="`${process.env.BASE_URL}${globals.header.logo.path}`"
+              :src="`${baseUrl}${globals.header.logo.path}`"
             />
           </v-btn>
           <app-nav-bar @toggle-nav-drawer="toggleDrawer = !toggleDrawer" />
@@ -48,6 +48,9 @@ export default {
   },
   computed: {
     ...mapGetters(['globals']),
+    baseUrl() {
+      return process.env.BASE_URL
+    },
   },
   mounted() {
     this.$store.dispatch('getGlobals', 'globals')
